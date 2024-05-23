@@ -2,8 +2,8 @@ name: AWS S3 Data Sync To Filebase
 on:
   workflow_dispatch:
   push:
-  schedule:
-    - cron: "0 * * * *" # To run at 0 minute every single hour of every single week
+  # schedule:
+  #   - cron: "0 * * * *" # To run at 0 minute every single hour of every single week
 
 jobs:
   s3sync:
