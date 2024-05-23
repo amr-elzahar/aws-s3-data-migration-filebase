@@ -4,6 +4,9 @@ on:
   push:
   # schedule:
   #   - cron: "0 * * * *" # To run at 0 minute every single hour of every single week
+env:
+  AWS_S3_BUCKET_NAME: myS3Bucket
+  FILEBASE_BUCKET_NAME: myFilebaseBucket
 
 jobs:
   s3sync:
@@ -27,4 +30,4 @@ jobs:
             FILEBASE_SECRET_ACCESS_KEY=${{ secrets.FILEBASE_SECRET_ACCESS_KEY }}
       - name: Running Rclone Sync Command
         run: |
-          rclone sync s3Source:data-sync-to-filebase-bucket filebaseDest:data-sync-from-awss3 --config rclone-prod.conf --auto-confirm
+          rclone sync s3Source:${{ env.AWS_S3_BUCKET_NAME}} filebaseDest:${{ env.FILEBASE_BUCKET_NAME }} --config rclone-prod.conf --auto-confirm

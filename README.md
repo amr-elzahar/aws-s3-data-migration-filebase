@@ -18,6 +18,7 @@ The workflow is triggered to sync data every hour. It performs the following ste
    - `AWS_SECRET_ACCESS_KEY`
    - `FILEBASE_ACCESS_KEY_ID`
    - `FILEBASE_SECRET_ACCESS_KEY`
+2. **Create AWS S3 and Filebase Buckets**: Ensure to create AWS S3 and Filebase buckets before starting the workflow
 
 ### s3source
 
