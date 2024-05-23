@@ -1,0 +1,14 @@
+name: AWS S3 Data Sync To Filebase
+on:
+  workflow_dispatch:
+  push:
+  schedule:
+    - cron: "0 * * * *" # To run at 0 minute every single hour of every single week
+
+jobs:
+  s3sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Rclone
+        run: |
+          curl https://rclone.org/install.sh | sudo bash
